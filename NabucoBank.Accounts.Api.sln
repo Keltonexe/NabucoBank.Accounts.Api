@@ -3,18 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Api", "NabucoBank.Accounts.Api.csproj", "{2E352413-B584-4EA7-9027-E873D8F70ABD}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE} = {7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Application", "..\NabucoBank.Accounts.Application\NabucoBank.Accounts.Application.csproj", "{E5F18078-DB8E-430E-85DC-DCF100F12EB6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Domain", "..\NabucoBank.Accounts.Domain\NabucoBank.Accounts.Domain.csproj", "{D7C41A19-BDBA-4755-815B-71EBDDDC4EB7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Infrastructure", "..\NabucoBank.Accounts.Infrastructure\NabucoBank.Accounts.Infrastructure.csproj", "{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.CrossCutting", "..\NabucoBank.Accounts.CrossCutting\NabucoBank.Accounts.CrossCutting.csproj", "{1B851726-0711-46EE-BF2C-2FC2138D6E29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Api", "src\NabucoBank.Accounts.Api\NabucoBank.Accounts.Api.csproj", "{0419A375-C92D-450B-A5A2-0D4BBA832033}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,26 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E352413-B584-4EA7-9027-E873D8F70ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E352413-B584-4EA7-9027-E873D8F70ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E352413-B584-4EA7-9027-E873D8F70ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E352413-B584-4EA7-9027-E873D8F70ABD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5F18078-DB8E-430E-85DC-DCF100F12EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5F18078-DB8E-430E-85DC-DCF100F12EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5F18078-DB8E-430E-85DC-DCF100F12EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5F18078-DB8E-430E-85DC-DCF100F12EB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7C41A19-BDBA-4755-815B-71EBDDDC4EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7C41A19-BDBA-4755-815B-71EBDDDC4EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7C41A19-BDBA-4755-815B-71EBDDDC4EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7C41A19-BDBA-4755-815B-71EBDDDC4EB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F86A556-03FA-4B49-A9ED-34EE6EBA97FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B851726-0711-46EE-BF2C-2FC2138D6E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B851726-0711-46EE-BF2C-2FC2138D6E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B851726-0711-46EE-BF2C-2FC2138D6E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B851726-0711-46EE-BF2C-2FC2138D6E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
