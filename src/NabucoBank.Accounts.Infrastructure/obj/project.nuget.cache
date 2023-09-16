@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LUgyNmPy8MC+oyoQZfLayvVqroWybb5yTCq8AO8Ja1uLPGiNimS6EnMMr/5r81lmwKxTRLAij+7NkjwmnsM7pQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kelton\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512"
+  ],
+  "logs": []
+}

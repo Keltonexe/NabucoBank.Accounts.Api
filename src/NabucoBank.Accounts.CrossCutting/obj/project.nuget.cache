@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "H2/fKalI9fitj1rY1SAbUh/3kL/LHdt9PONjNPwOEx1R2mtXE7ZvgcW5bBkQTaO7eImOddT9jIVbSth08IxDaQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.CrossCutting\\NabucoBank.Accounts.CrossCutting.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kelton\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\dapper.fluentmap\\2.0.0\\dapper.fluentmap.2.0.0.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

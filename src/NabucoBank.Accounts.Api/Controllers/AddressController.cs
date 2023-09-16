@@ -17,7 +17,7 @@ namespace NabucoBank.Accounts.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync() 
         {
-            return Ok(await _addressServiceApp.GetAllAddresssAsync());
+            return Ok(await _addressServiceApp.GetAllAddressesAsync());
         }
 
         [HttpGet("{id}")]

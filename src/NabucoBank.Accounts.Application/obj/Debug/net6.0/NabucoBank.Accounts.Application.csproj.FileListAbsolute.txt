@@ -1,0 +1,15 @@
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\bin\Debug\net6.0\NabucoBank.Accounts.Application.deps.json
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\bin\Debug\net6.0\NabucoBank.Accounts.Application.dll
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\bin\Debug\net6.0\NabucoBank.Accounts.Application.pdb
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\bin\Debug\net6.0\NabucoBank.Accounts.Domain.dll
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\bin\Debug\net6.0\NabucoBank.Accounts.Domain.pdb
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.csproj.AssemblyReference.cache
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.AssemblyInfoInputs.cache
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.AssemblyInfo.cs
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.csproj.CoreCompileInputs.cache
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.csproj.CopyComplete
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.dll
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\refint\NabucoBank.Accounts.Application.dll
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\NabucoBank.Accounts.Application.pdb
+C:\Users\Kelton\source\repos\Keltonexe\NabucoBank.Accounts.Api\src\NabucoBank.Accounts.Application\obj\Debug\net6.0\ref\NabucoBank.Accounts.Application.dll

@@ -5,6 +5,14 @@ VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NabucoBank.Accounts.Api", "src\NabucoBank.Accounts.Api\NabucoBank.Accounts.Api.csproj", "{0419A375-C92D-450B-A5A2-0D4BBA832033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NabucoBank.Accounts.Application", "src\NabucoBank.Accounts.Application\NabucoBank.Accounts.Application.csproj", "{95B86281-2132-46DE-A968-FBB59645DFBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NabucoBank.Accounts.CrossCutting", "src\NabucoBank.Accounts.CrossCutting\NabucoBank.Accounts.CrossCutting.csproj", "{D97911FA-FD1E-4932-8826-4A64F881D39E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NabucoBank.Accounts.Domain", "src\NabucoBank.Accounts.Domain\NabucoBank.Accounts.Domain.csproj", "{E9935794-47CE-45EB-814E-457DE6436892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NabucoBank.Accounts.Infrastructure", "src\NabucoBank.Accounts.Infrastructure\NabucoBank.Accounts.Infrastructure.csproj", "{28E56183-383B-41C2-B81F-D2CB8B71CC60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0419A375-C92D-450B-A5A2-0D4BBA832033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B86281-2132-46DE-A968-FBB59645DFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B86281-2132-46DE-A968-FBB59645DFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B86281-2132-46DE-A968-FBB59645DFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B86281-2132-46DE-A968-FBB59645DFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97911FA-FD1E-4932-8826-4A64F881D39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97911FA-FD1E-4932-8826-4A64F881D39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97911FA-FD1E-4932-8826-4A64F881D39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97911FA-FD1E-4932-8826-4A64F881D39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9935794-47CE-45EB-814E-457DE6436892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9935794-47CE-45EB-814E-457DE6436892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9935794-47CE-45EB-814E-457DE6436892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9935794-47CE-45EB-814E-457DE6436892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E56183-383B-41C2-B81F-D2CB8B71CC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E56183-383B-41C2-B81F-D2CB8B71CC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E56183-383B-41C2-B81F-D2CB8B71CC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E56183-383B-41C2-B81F-D2CB8B71CC60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

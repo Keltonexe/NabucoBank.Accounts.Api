@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.OpenApi.Models;
 using MySql.Data.MySqlClient;
 using NabucoBank.Accounts.Application.Interfaces;
 using NabucoBank.Accounts.Application.Services;
 using NabucoBank.Accounts.CrossCutting.AutoMapper;
+using NabucoBank.Accounts.CrossCutting.Configuration;
 using NabucoBank.Accounts.Domain.Interfaces;
 using NabucoBank.Accounts.Domain.Interfaces.Repositories;
 using NabucoBank.Accounts.Domain.Services;
@@ -22,6 +21,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+DbMapping.InitializeMapping();
 
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
