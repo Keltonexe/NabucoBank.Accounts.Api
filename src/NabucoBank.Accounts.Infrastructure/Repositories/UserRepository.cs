@@ -2,7 +2,6 @@
 using NabucoBank.Accounts.Domain.Interfaces.Repositories;
 using NabucoBank.Accounts.Domain.Models;
 using System.Data;
-using System.Security.Principal;
 
 namespace NabucoBank.Accounts.Infrastructure.Repositories
 {

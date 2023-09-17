@@ -1,0 +1,30 @@
+# Arquivos temporários criados pelo Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+
+# Logs e arquivos de depuração
+*.log
+*.logs
+*.mdb
+*.pdb
+
+# Arquivos de usuário e configurações do Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Cache do Resharper
+_ReSharper.*
+
+# Arquivos de saída
+[Bb]in/
+[Oo]bj/
+
+# Pasta de pacotes NuGet
+packages/
+
+# Visual Studio 2019 config folder
+.vs2019/
