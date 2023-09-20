@@ -28,24 +28,64 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
-        public Task<bool> DeleteAccountAsync(long id)
+        public async Task<bool> DeleteAccountAsync(long id)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "UPDATE accounts SET DT_DELETED = @DeletedAt WHERE ID = @id;";
+                await _connection.ExecuteAsync(sql, new { DeletedAt = DateTime.Now, id });
+                return true;
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<AccountModel> GetAccountByIdAsync(long id)
+        public async Task<AccountModel> GetAccountByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM accounts WHERE ID = @id;";
+                return await _connection.QuerySingleAsync<AccountModel>(sql, new { id });
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<IEnumerable<AccountModel>> GetAllAccountsAsync()
+        public async Task<IEnumerable<AccountModel>> GetAllAccountsAsync()
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM accounts;";
+                return await _connection.QueryAsync<AccountModel>(sql);
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<bool> UpdateAccountAsync(AccountModel account, long id)
+        public async Task<bool> UpdateAccountAsync(AccountModel account)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                account.UpdatedAt = DateTime.Now;
+                string sql = "UPDATE accounts SET NUMBER = @Number, BALANCE = @Balance, DT_UPDATED = @UpdatedAt WHERE ID_USER = @UserId;";
+                await _connection.ExecuteAsync(sql, account);
+                return true;
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace NabucoBank.Accounts.Application.Interfaces
         Task<IEnumerable<AccountViewModel>> GetAllAccountsAsync();
         Task<AccountViewModel> GetAccountByIdAsync(long id);
         Task<AccountViewModel> CreateAccountAsync(AccountPayload payload);
-        Task<bool> UpdateAccountAsync(AccountPayload payload, long id);
+        Task<bool> UpdateAccountAsync(AccountPayload payload);
         Task<bool> DeleteAccountAsync(long id);
     }
 }

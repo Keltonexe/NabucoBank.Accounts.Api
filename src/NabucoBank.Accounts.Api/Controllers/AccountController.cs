@@ -32,10 +32,10 @@ namespace NabucoBank.Accounts.Api.Controllers
             return Ok(await _accountServiceApp.CreateAccountAsync(payload));
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync([FromBody] AccountPayload payload, [FromRoute] long id)
+        [HttpPut]
+        public async Task<IActionResult> PutAsync([FromBody] AccountPayload payload)
         {
-            return Ok(await _accountServiceApp.UpdateAccountAsync(payload, id));
+            return Ok(await _accountServiceApp.UpdateAccountAsync(payload));
         }
 
         [HttpDelete("{id}")]

@@ -9,13 +9,13 @@ namespace NabucoBank.Accounts.Api.Controllers
     public class UserController : ControllerBase
     {
         readonly IUserServiceApp _userServiceApp;
-        public UserController(IUserServiceApp userServiceApp) 
+        public UserController(IUserServiceApp userServiceApp)
         {
             _userServiceApp = userServiceApp;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync() 
+        public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _userServiceApp.GetAllUsersAsync());
         }
@@ -23,12 +23,22 @@ namespace NabucoBank.Accounts.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync([FromRoute] long id)
         {
-            return Ok(await _userServiceApp.GetUserByIdAsync(id));
+            var result = await _userServiceApp.GetUserByIdAsync(id);
+
+            if (result == null)
+                return NotFound("Usuário não encontrado.");
+
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] UserPayload payload)
         {
+            var result = await _userServiceApp.CreateUserAsync(payload);
+
+            if (result == null)
+                return Conflict("Usuário já cadastrado.");
+
             return Ok(await _userServiceApp.CreateUserAsync(payload));
         }
 

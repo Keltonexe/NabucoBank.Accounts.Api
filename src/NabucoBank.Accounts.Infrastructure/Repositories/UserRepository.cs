@@ -28,24 +28,78 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
-        public Task<bool> DeleteUserAsync(long id)
+        public async Task<bool> DeleteUserAsync(long id)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "UPDATE users SET DT_DELETED = @DeletedAt WHERE ID = @id;";
+                await _connection.ExecuteAsync(sql, new { DeletedAt = DateTime.Now, id });
+                return true;
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<IEnumerable<UserModel>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM users;";
+                return await _connection.QueryAsync<UserModel>(sql);
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<UserModel> GetUserByIdAsync(long id)
+        public async Task<UserModel> GetUserByCpf(string cpf)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM users WHERE CPF = @cpf";
+                return await _connection.QuerySingleAsync<UserModel>(sql, new { cpf });
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
 
-        public Task<bool> UpdateUserAsync(UserModel user, long id)
+        public async Task<UserModel> GetUserByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM users WHERE ID = @id;";
+                return await _connection.QuerySingleAsync<UserModel>(sql, new { id });
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public async Task<bool> UpdateUserAsync(UserModel user, long id)
+        {
+            _connection.Open();
+            try
+            {
+                user.Id = id;
+                user.UpdatedAt = DateTime.Now;
+                string sql = "UPDATE users SET CPF = @Cpf, NAME = @Name, EMAIL = @Email, PASSWORD = @Password, PHONE = @Phone, DT_UPDATED = @UpdatedAt WHERE ID = @id;";
+                await _connection.ExecuteAsync(sql, user);
+                return true;
+            }
+            finally
+            {
+                _connection.Close();
+            }
         }
     }
 }

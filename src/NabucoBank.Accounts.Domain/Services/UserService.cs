@@ -26,6 +26,11 @@ namespace NabucoBank.Accounts.Domain.Services
             return await _userRepository.GetAllUsersAsync();
         }
 
+        public async Task<UserModel> GetUserByCpf(string cpf)
+        {
+            return await _userRepository.GetUserByCpf(cpf);
+        }
+
         public async Task<UserModel> GetUserByIdAsync(long id)
         {
             return await _userRepository.GetUserByIdAsync(id);

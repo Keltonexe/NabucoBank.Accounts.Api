@@ -36,9 +36,9 @@ namespace NabucoBank.Accounts.Application.Services
             return _mapper.Map<IEnumerable<AccountViewModel>>(await _accountService.GetAllAccountsAsync());
         }
 
-        public async Task<bool> UpdateAccountAsync(AccountPayload payload, long id)
+        public async Task<bool> UpdateAccountAsync(AccountPayload payload)
         {
-            return await _accountService.UpdateAccountAsync(_mapper.Map<AccountModel>(payload), id);
+            return await _accountService.UpdateAccountAsync(_mapper.Map<AccountModel>(payload));
         }
     }
 }

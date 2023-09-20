@@ -31,9 +31,9 @@ namespace NabucoBank.Accounts.Domain.Services
             return await _accountRepository.GetAllAccountsAsync();
         }
 
-        public async Task<bool> UpdateAccountAsync(AccountModel account, long id)
+        public async Task<bool> UpdateAccountAsync(AccountModel account)
         {
-            return await _accountRepository.UpdateAccountAsync(account, id);
+            return await _accountRepository.UpdateAccountAsync(account);
         }
     }
 }

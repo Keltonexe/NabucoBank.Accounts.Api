@@ -36,9 +36,9 @@ namespace NabucoBank.Accounts.Application.Services
             return _mapper.Map<IEnumerable<AddressViewModel>>(await _addressService.GetAllAddressAsync());
         }
 
-        public async Task<bool> UpdateAddressAsync(AddressPayload payload, long id)
+        public async Task<bool> UpdateAddressAsync(AddressPayload payload)
         {
-            return await _addressService.UpdateAddressAsync(_mapper.Map<AddressModel>(payload), id);
+            return await _addressService.UpdateAddressAsync(_mapper.Map<AddressModel>(payload));
         }
     }
 }

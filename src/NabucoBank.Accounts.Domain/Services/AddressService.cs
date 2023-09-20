@@ -31,9 +31,9 @@ namespace NabucoBank.Accounts.Domain.Services
             return await _addressRepository.GetAllAddressAsync();
         }
 
-        public async Task<bool> UpdateAddressAsync(AddressModel address, long id)
+        public async Task<bool> UpdateAddressAsync(AddressModel address)
         {
-            return await _addressRepository.UpdateAddressAsync(address, id);
+            return await _addressRepository.UpdateAddressAsync(address);
         }
     }
 }

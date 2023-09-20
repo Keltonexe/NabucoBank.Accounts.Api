@@ -8,7 +8,7 @@ namespace NabucoBank.Accounts.Application.Interfaces
         Task<IEnumerable<AddressViewModel>> GetAllAddressesAsync();
         Task<AddressViewModel> GetAddressByIdAsync(long id);
         Task<AddressViewModel> CreateAddressAsync(AddressPayload payload);
-        Task<bool> UpdateAddressAsync(AddressPayload payload, long id);
+        Task<bool> UpdateAddressAsync(AddressPayload payload);
         Task<bool> DeleteAddressAsync(long id);
     }
 }
