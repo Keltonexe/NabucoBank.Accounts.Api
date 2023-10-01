@@ -43,13 +43,27 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
+        public async Task<AccountModel> GetAccountByUserIdAsync(long id)
+        {
+            _connection.Open();
+            try
+            {
+                string sql = "SELECT * FROM accounts WHERE ID_USER = @id;";
+                return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { id });
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
         public async Task<AccountModel> GetAccountByIdAsync(long id)
         {
             _connection.Open();
             try
             {
                 string sql = "SELECT * FROM accounts WHERE ID = @id;";
-                return await _connection.QuerySingleAsync<AccountModel>(sql, new { id });
+                return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { id });
             }
             finally
             {

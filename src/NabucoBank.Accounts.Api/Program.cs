@@ -27,7 +27,6 @@ builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IAddressRepository, AddressRepository>();
 
-//builder.Services.AddScoped<IMapper>();
 builder.Services.AddTransient<IDbConnection>((sql) => new MySqlConnection(builder.Configuration.GetConnectionString("NabucoBank")));
 
 // Add services app

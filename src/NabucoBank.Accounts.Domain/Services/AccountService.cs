@@ -21,6 +21,11 @@ namespace NabucoBank.Accounts.Domain.Services
             return await _accountRepository.DeleteAccountAsync(id);
         }
 
+        public async Task<AccountModel> GetAccountByUserIdAsync(long id)
+        {
+            return await _accountRepository.GetAccountByUserIdAsync(id);
+        }
+
         public async Task<AccountModel> GetAccountByIdAsync(long id)
         {
             return await _accountRepository.GetAccountByIdAsync(id);

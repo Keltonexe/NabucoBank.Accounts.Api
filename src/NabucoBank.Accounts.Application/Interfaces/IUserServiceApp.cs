@@ -6,8 +6,8 @@ namespace NabucoBank.Accounts.Application.Interfaces
     public interface IUserServiceApp
     {
         Task<IEnumerable<UserViewModel>> GetAllUsersAsync();
-        Task<UserViewModel> GetUserByCpf(string cpf);
         Task<UserViewModel> GetUserByIdAsync(long id);
+        Task<UserViewModel> GetUserByCpfAsync(string cpf);
         Task<UserViewModel> CreateUserAsync(UserPayload payload);
         Task<bool> UpdateUserAsync(UserPayload payload, long id);
         Task<bool> DeleteUserAsync(long id);

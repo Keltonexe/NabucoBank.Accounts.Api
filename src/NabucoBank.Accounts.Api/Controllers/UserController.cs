@@ -31,6 +31,17 @@ namespace NabucoBank.Accounts.Api.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{cpf}")]
+        public async Task<IActionResult> GetByCpfAsync([FromRoute] string cpf)
+        {
+            var result = await _userServiceApp.GetUserByCpfAsync(cpf);
+
+            if (result == null)
+                return NotFound("Usuário não encontrado.");
+
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] UserPayload payload)
         {

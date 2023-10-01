@@ -15,6 +15,15 @@ namespace NabucoBank.Accounts.Api.Controllers
         }
 
         [HttpGet]
+        [Route("cep/{cep}")]
+        public async Task<IActionResult> GetCEP([FromRoute] string cep)
+        {
+            using HttpClient client = new();
+            HttpResponseMessage response = await client.GetAsync($"https://viacep.com.br/ws/{cep}/json/");
+            return Ok(await response.Content.ReadAsStringAsync());
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAllAsync() 
         {
             return Ok(await _addressServiceApp.GetAllAddressesAsync());

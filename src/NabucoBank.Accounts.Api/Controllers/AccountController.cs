@@ -26,6 +26,12 @@ namespace NabucoBank.Accounts.Api.Controllers
             return Ok(await _accountServiceApp.GetAccountByIdAsync(id));
         }
 
+        [HttpGet("cpf/{cpf}")]
+        public async Task<IActionResult> GetUserAccountByCpfAsync([FromRoute] string cpf)
+        {
+            return Ok(await _accountServiceApp.GetUserAccountByCpfAsync(cpf));
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] AccountPayload payload)
         {

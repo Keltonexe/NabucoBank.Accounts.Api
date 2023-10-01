@@ -57,13 +57,13 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
-        public async Task<UserModel> GetUserByCpf(string cpf)
+        public async Task<UserModel> GetUserByCpfAsync(string cpf)
         {
             _connection.Open();
             try
             {
                 string sql = "SELECT * FROM users WHERE CPF = @cpf";
-                return await _connection.QuerySingleAsync<UserModel>(sql, new { cpf });
+                return await _connection.QueryFirstOrDefaultAsync<UserModel>(sql, new { cpf });
             }
             finally
             {

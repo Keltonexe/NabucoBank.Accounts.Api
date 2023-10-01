@@ -18,7 +18,7 @@ namespace NabucoBank.Accounts.Application.Services
         }
         public async Task<UserViewModel> CreateUserAsync(UserPayload payload)
         {
-            var user = await GetUserByCpf(payload.Cpf);
+            var user = await GetUserByCpfAsync(payload.Cpf);
 
             if (user == null)
                 return _mapper.Map<UserViewModel>(await _userService.CreateUserAsync(_mapper.Map<UserModel>(payload)));
@@ -42,9 +42,9 @@ namespace NabucoBank.Accounts.Application.Services
             return null;
         }
 
-        public async Task<UserViewModel> GetUserByCpf(string cpf)
+        public async Task<UserViewModel> GetUserByCpfAsync(string cpf)
         {
-            return _mapper.Map<UserViewModel>(await _userService.GetUserByCpf(cpf));
+            return _mapper.Map<UserViewModel>(await _userService.GetUserByCpfAsync(cpf));
         }
 
         public async Task<UserViewModel> GetUserByIdAsync(long id)
