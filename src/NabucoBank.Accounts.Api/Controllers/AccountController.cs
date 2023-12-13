@@ -9,13 +9,13 @@ namespace NabucoBank.Accounts.Api.Controllers
     public class AccountController : ControllerBase
     {
         readonly IAccountServiceApp _accountServiceApp;
-        public AccountController(IAccountServiceApp accountServiceApp) 
+        public AccountController(IAccountServiceApp accountServiceApp)
         {
             _accountServiceApp = accountServiceApp;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync() 
+        public async Task<IActionResult> GetAllAsync()
         {
             return Ok(await _accountServiceApp.GetAllAccountsAsync());
         }
