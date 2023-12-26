@@ -396,5 +396,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-/src/NabucoBank.Accounts.Infrastructure/obj/NabucoBank.Accounts.Infrastructure.csproj.nuget.g.targets
-/src/NabucoBank.Accounts.Infrastructure/obj/Debug/net6.0/NabucoBank.Accounts.Infrastructure.GlobalUsings.g.cs
