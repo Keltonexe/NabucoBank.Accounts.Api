@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LUgyNmPy8MC+oyoQZfLayvVqroWybb5yTCq8AO8Ja1uLPGiNimS6EnMMr/5r81lmwKxTRLAij+7NkjwmnsM7pQ==",
+  "dgSpecHash": "0Iz9dlK2oGe3ruhc2o77Hsld6i+BNprE4wLPylGlMqsE2Gdb3t/w50vMSMUGgluMnO9itQjUTS92kc4e12TgPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Kelton\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512"
+    "C:\\Users\\Kelton\\.nuget\\packages\\bogus\\35.0.1\\bogus.35.0.1.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512"
   ],
   "logs": []
 }

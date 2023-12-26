@@ -1,11 +1,47 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Bogus/35.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Bogus/35.0.1": {
+      "sha512": "LS9nczTM+frGJ9bdQV82WwEvt1tKaiIQq0kmeMhUyuzhWMRggo9WULTxhc++QjWQQ2bWp65lyt00nJt0meKD0g==",
+      "type": "package",
+      "path": "bogus/35.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bogus.35.0.1.nupkg.sha512",
+        "bogus.nuspec",
+        "lib/net40/Bogus.dll",
+        "lib/net40/Bogus.xml",
+        "lib/net6.0/Bogus.dll",
+        "lib/net6.0/Bogus.xml",
+        "lib/netstandard1.3/Bogus.dll",
+        "lib/netstandard1.3/Bogus.xml",
+        "lib/netstandard2.0/Bogus.dll",
+        "lib/netstandard2.0/Bogus.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Bogus >= 35.0.1"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Kelton\\.nuget\\packages\\": {}
@@ -13,11 +49,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
       "projectName": "NabucoBank.Accounts.Domain",
-      "projectPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
+      "projectPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
       "packagesPath": "C:\\Users\\Kelton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kelton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +81,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Bogus": {
+            "target": "Package",
+            "version": "[35.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -61,7 +103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

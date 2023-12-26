@@ -15,39 +15,21 @@ namespace NabucoBank.Accounts.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync() 
-        {
-            return Ok(await _accountServiceApp.GetAllAccountsAsync());
-        }
+        public async Task<IActionResult> GetAllAsync() => Ok(await _accountServiceApp.GetAllAccountsAsync());
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync([FromRoute] long id)
-        {
-            return Ok(await _accountServiceApp.GetAccountByIdAsync(id));
-        }
+        public async Task<IActionResult> GetByIdAsync([FromRoute] long id) => Ok(await _accountServiceApp.GetAccountByIdAsync(id));
 
-        [HttpGet("cpf/{cpf}")]
-        public async Task<IActionResult> GetUserAccountByCpfAsync([FromRoute] string cpf)
-        {
-            return Ok(await _accountServiceApp.GetUserAccountByCpfAsync(cpf));
-        }
+        [HttpGet("{document}")]
+        public async Task<IActionResult> GetCustomerAccountByDocumentAsync([FromRoute] string document) => Ok(await _accountServiceApp.GetCustomerAccountByDocumentAsync(document));
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] AccountPayload payload)
-        {
-            return Ok(await _accountServiceApp.CreateAccountAsync(payload));
-        }
+        public async Task<IActionResult> PostAsync([FromBody] AccountPayload payload) => Ok(await _accountServiceApp.CreateAccountAsync(payload));
 
         [HttpPut]
-        public async Task<IActionResult> PutAsync([FromBody] AccountPayload payload)
-        {
-            return Ok(await _accountServiceApp.UpdateAccountAsync(payload));
-        }
+        public async Task<IActionResult> PutAsync([FromBody] AccountPayload payload) => Ok(await _accountServiceApp.UpdateAccountAsync(payload));
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(long id)
-        {
-            return Ok(await _accountServiceApp.DeleteAccountAsync(id));
-        }
+        public async Task<IActionResult> DeleteAsync(long id) => Ok(await _accountServiceApp.DeleteAccountAsync(id));
     }
 }

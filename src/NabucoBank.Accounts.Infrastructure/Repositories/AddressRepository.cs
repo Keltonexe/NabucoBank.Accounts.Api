@@ -18,10 +18,24 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             try
             {
                 address.HashCode = Guid.NewGuid().ToString();
-                string sql = @"INSERT INTO address (ID_USER, STREET, STATE, CITY, NUMBER, COMPLEMENT, DT_CREATED, HASH_CODE) 
-                               VALUES (@UserId, @Street, @State, @City, @Number, @Complement, @CreatedAt, @HashCode);
+                string sql = @"INSERT INTO address (ZIPCODE, STREET, CITY, STATE, NUMBER, COMPLEMENT, DT_CREATED, HASH_CODE) 
+                               VALUES (@Zipcode, @Street, @City, @State, @Number, @Complement, @CreatedAt, @HashCode);
                                SELECT * FROM address WHERE ID = LAST_INSERT_ID();";
                 return await _connection.QuerySingleAsync<AddressModel>(sql, address);
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public async Task<bool> InsertCustomerAddressAsync(CustomerAddressModel customerAddress)
+        {
+            _connection.Open();
+            try
+            {
+                string sql = "INSERT INTO customer_address (ID_CUSTOMER, ID_ADDRESS) VALUES (@CustomerId, @AddressId);";
+                return await _connection.ExecuteAsync(sql, customerAddress) > 1;
             }
             finally
             {
@@ -34,9 +48,8 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             _connection.Open();
             try
             {
-                string sql = "UPDATE address SET DT_DELETED = @DeletedAt WHERE ID = @id;";
-                await _connection.ExecuteAsync(sql, new { DeletedAt = DateTime.Now, id });
-                return true;
+                string sql = "DELETE FROM address WHERE ID = @id;";
+                return await _connection.ExecuteAsync(sql, new { id }) > 1;
             }
             finally
             {
@@ -58,13 +71,13 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
-        public Task<IEnumerable<AddressModel>> GetAllAddressAsync()
+        public async Task<IEnumerable<AddressModel>> GetAllAddressAsync()
         {
             _connection.Open();
             try
             {
                 string sql = "SELECT * FROM address;";
-                return _connection.QueryAsync<AddressModel>(sql);
+                return await _connection.QueryAsync<AddressModel>(sql);
             }
             finally
             {
@@ -72,15 +85,14 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
+
         public async Task<bool> UpdateAddressAsync(AddressModel address)
         {
             _connection.Open();
             try
             {
-                address.UpdatedAt = DateTime.Now;
-                string sql = "UPDATE address SET STREET = @Street, STATE = @State, CITY = @City, NUMBER = @Number, COMPLEMENT = @Complement, DT_UPDATED = @UpdatedAt WHERE ID_USER = @UserId;";
-                await _connection.ExecuteAsync(sql, address);
-                return true;
+                string sql = "UPDATE address SET ZIPCODE = @Zipcode, STREET = @Street, NUMBER = @Number, CITY = @City, STATE = @State, COMPLEMENT = @Complement, DT_UPDATED = @UpdatedAt WHERE ID = @Id;";
+                return await _connection.ExecuteAsync(sql, new { UpdatedAt = DateTime.Now, address }) > 1;
             }
             finally
             {

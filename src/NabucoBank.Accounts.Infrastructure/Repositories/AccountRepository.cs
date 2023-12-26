@@ -18,8 +18,8 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             try
             {
                 account.HashCode = Guid.NewGuid().ToString();
-                string sql = @"INSERT INTO accounts (ID_USER, NUMBER, BALANCE, DT_CREATED, HASH_CODE) VALUES (@UserId, @Number, @Balance, @CreatedAt, @HashCode);
-                               SELECT * FROM accounts WHERE ID_USER = LAST_INSERT_ID();";
+                string sql = @"INSERT INTO accounts (ID_CUSTOMER, ID_ADDRESS, NUMBER, BRANCH, BALANCE, DT_CREATED, HASH_CODE) VALUES (@CustomerId, @AddressId, @Number, @Branch, @Balance, @CreatedAt, @HashCode);
+                               SELECT * FROM accounts WHERE ID = LAST_INSERT_ID();";
                 return await _connection.QuerySingleAsync<AccountModel>(sql, account);
             }
             finally
@@ -33,9 +33,8 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             _connection.Open();
             try
             {
-                string sql = "UPDATE accounts SET DT_DELETED = @DeletedAt WHERE ID = @id;";
-                await _connection.ExecuteAsync(sql, new { DeletedAt = DateTime.Now, id });
-                return true;
+                string sql = "DELETE FROM accounts WHERE ID = @id;";
+                return await _connection.ExecuteAsync(sql, new { id }) > 1;                
             }
             finally
             {
@@ -43,12 +42,12 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             }
         }
 
-        public async Task<AccountModel> GetAccountByUserIdAsync(long id)
+        public async Task<AccountModel> GetAccountByCustomerIdAsync(long id)
         {
             _connection.Open();
             try
             {
-                string sql = "SELECT * FROM accounts WHERE ID_USER = @id;";
+                string sql = "SELECT * FROM accounts WHERE ID_CUSTOMER = @id;";
                 return await _connection.QueryFirstOrDefaultAsync<AccountModel>(sql, new { id });
             }
             finally
@@ -90,11 +89,8 @@ namespace NabucoBank.Accounts.Infrastructure.Repositories
             _connection.Open();
             try
             {
-                account.UpdatedAt = DateTime.Now;
-                string sql = "UPDATE accounts SET NUMBER = @Number, BALANCE = @Balance, DT_UPDATED = @UpdatedAt WHERE ID_USER = @UserId;";
-                await _connection.ExecuteAsync(sql, account);
-                return true;
-
+                string sql = "UPDATE accounts SET NUMBER = @Number, BALANCE = @Balance, DT_UPDATED = @UpdatedAt WHERE ID = @Id;";
+                return await _connection.ExecuteAsync(sql, new { UpdatedAt = DateTime.Now, account }) > 1;
             }
             finally
             {

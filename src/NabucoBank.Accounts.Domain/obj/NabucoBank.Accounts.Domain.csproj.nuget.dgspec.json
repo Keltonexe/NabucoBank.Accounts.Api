@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {}
+    "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {
+    "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
         "projectName": "NabucoBank.Accounts.Domain",
-        "projectPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
+        "projectPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
         "packagesPath": "C:\\Users\\Kelton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kelton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

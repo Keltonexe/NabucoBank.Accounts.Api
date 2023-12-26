@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Z2iQ/AWt6wslWPOcHS6zw+LMlDD8SuNCXc79UJoA7DlYM3cy+F016gQyrBMYag7bK/aJPgKztBkqxHZ6dcT69Q==",
+  "dgSpecHash": "ikpgzc7etOKBuWwXOcxcJ6gp8WBSSKq8t9ofz07B9c7CC3H/KxQlehSZdTanYJMXW2vI72Rqs57IAWlG70reKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kelton\\.nuget\\packages\\bogus\\35.0.1\\bogus.35.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

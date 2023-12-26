@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NabucoBank.Accounts.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdcd20d936c12677b5319561bb32c9ff768ed8bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("NabucoBank.Accounts.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NabucoBank.Accounts.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

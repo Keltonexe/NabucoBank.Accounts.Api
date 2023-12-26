@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jb2ZqOR1qVLvtdwf6Axkdx2moRPYy3UNSBtg2GBP/rc66KIGQpxKV5O5NpKhFFIqSOW2rZMosowCMCdPLKYP2g==",
+  "dgSpecHash": "bbXPGqqEWrSCImxit/eCGecoYrioMOftwzzERbnVEhkGn3o4l8zRPhdEyc47TRwF0EguGjOSXvbi5hkUgwcGiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.CrossCutting\\NabucoBank.Accounts.CrossCutting.csproj",
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.CrossCutting\\NabucoBank.Accounts.CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kelton\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\bogus\\35.0.1\\bogus.35.0.1.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\dapper.fluentmap\\2.0.0\\dapper.fluentmap.2.0.0.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\flurl\\3.0.6\\flurl.3.0.6.nupkg.sha512",

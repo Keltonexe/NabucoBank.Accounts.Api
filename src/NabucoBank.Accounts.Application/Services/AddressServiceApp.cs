@@ -16,29 +16,14 @@ namespace NabucoBank.Accounts.Application.Services
             _addressService = addressService;
             _mapper = mapper;
         }
-        public async Task<AddressViewModel> CreateAddressAsync(AddressPayload payload)
-        {
-            return _mapper.Map<AddressViewModel>(await _addressService.CreateAddressAsync(_mapper.Map<AddressModel>(payload)));
-        }
+        public async Task<AddressViewModel> CreateAddressAsync(AddressPayload payload) => _mapper.Map<AddressViewModel>(await _addressService.CreateAddressAsync(_mapper.Map<AddressModel>(payload)));
 
-        public Task<bool> DeleteAddressAsync(long id)
-        {
-            return _addressService.DeleteAddressAsync(id);
-        }
+        public Task<bool> DeleteAddressAsync(long id) => _addressService.DeleteAddressAsync(id);
 
-        public async Task<AddressViewModel> GetAddressByIdAsync(long id)
-        {
-            return _mapper.Map<AddressViewModel>(await _addressService.GetAddressByIdAsync(id));
-        }
+        public async Task<AddressViewModel> GetAddressByIdAsync(long id) => _mapper.Map<AddressViewModel>(await _addressService.GetAddressByIdAsync(id));
 
-        public async Task<IEnumerable<AddressViewModel>> GetAllAddressesAsync()
-        {
-            return _mapper.Map<IEnumerable<AddressViewModel>>(await _addressService.GetAllAddressAsync());
-        }
+        public async Task<IEnumerable<AddressViewModel>> GetAllAddressesAsync() => _mapper.Map<IEnumerable<AddressViewModel>>(await _addressService.GetAllAddressAsync());
 
-        public async Task<bool> UpdateAddressAsync(AddressPayload payload)
-        {
-            return await _addressService.UpdateAddressAsync(_mapper.Map<AddressModel>(payload));
-        }
+        public async Task<bool> UpdateAddressAsync(AddressPayload payload) => await _addressService.UpdateAddressAsync(_mapper.Map<AddressModel>(payload));
     }
 }

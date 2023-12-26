@@ -2,7 +2,20 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Dapper/2.0.151": {
+      "Bogus/35.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Dapper/2.1.24": {
         "type": "package",
         "compile": {
           "lib/net5.0/Dapper.dll": {
@@ -18,6 +31,9 @@
       "NabucoBank.Accounts.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Bogus": "35.0.1"
+        },
         "compile": {
           "bin/placeholder/NabucoBank.Accounts.Domain.dll": {}
         },
@@ -28,22 +44,44 @@
     }
   },
   "libraries": {
-    "Dapper/2.0.151": {
-      "sha512": "mMcZgx1lim0/i1Ozu+lgnBM4GwNIHpCuxV6BV2ovsEfZAXRAq4jb6RIhxGDcVjtmXMLPpdp85jHPdDjBMMwejw==",
+    "Bogus/35.0.1": {
+      "sha512": "LS9nczTM+frGJ9bdQV82WwEvt1tKaiIQq0kmeMhUyuzhWMRggo9WULTxhc++QjWQQ2bWp65lyt00nJt0meKD0g==",
       "type": "package",
-      "path": "dapper/2.0.151",
+      "path": "bogus/35.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bogus.35.0.1.nupkg.sha512",
+        "bogus.nuspec",
+        "lib/net40/Bogus.dll",
+        "lib/net40/Bogus.xml",
+        "lib/net6.0/Bogus.dll",
+        "lib/net6.0/Bogus.xml",
+        "lib/netstandard1.3/Bogus.dll",
+        "lib/netstandard1.3/Bogus.xml",
+        "lib/netstandard2.0/Bogus.dll",
+        "lib/netstandard2.0/Bogus.xml"
+      ]
+    },
+    "Dapper/2.1.24": {
+      "sha512": "/2t2vsdJyZRsk13AsWigZpsuFvEwK+o3v862cEULXoww905gyKhJFSuwmZI/4Ui9COX9ZCFCI09UHyH4wVYl3A==",
+      "type": "package",
+      "path": "dapper/2.1.24",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Dapper.png",
-        "dapper.2.0.151.nupkg.sha512",
+        "dapper.2.1.24.nupkg.sha512",
         "dapper.nuspec",
         "lib/net461/Dapper.dll",
         "lib/net461/Dapper.xml",
         "lib/net5.0/Dapper.dll",
         "lib/net5.0/Dapper.xml",
+        "lib/net7.0/Dapper.dll",
+        "lib/net7.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
-        "lib/netstandard2.0/Dapper.xml"
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "NabucoBank.Accounts.Domain/1.0.0": {
@@ -54,7 +92,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Dapper >= 2.0.151",
+      "Dapper >= 2.1.24",
       "NabucoBank.Accounts.Domain >= 1.0.0"
     ]
   },
@@ -64,11 +102,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
       "projectName": "NabucoBank.Accounts.Infrastructure",
-      "projectPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\NabucoBank.Accounts.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Kelton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kelton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +123,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {
-              "projectPath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj"
+            "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj": {
+              "projectPath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Domain\\NabucoBank.Accounts.Domain.csproj"
             }
           }
         }
@@ -103,7 +141,7 @@
         "dependencies": {
           "Dapper": {
             "target": "Package",
-            "version": "[2.0.151, )"
+            "version": "[2.1.24, )"
           }
         },
         "imports": [
@@ -122,7 +160,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,11 +1,11 @@
 ﻿namespace NabucoBank.Accounts.Application.Payloads
 {
-    public class UserPayload
+    public class CustomerPayload
     {
-        public string Cpf { get; set; }
+        public string Document { get; set; }
+        public decimal Income { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
         public string Phone { get; set; }
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gwXEfI7fzjM7skNdMbF3XyhRsr3GRTfFd/fttoNnAdDW5P/yRG7E4zpUCSMH80/gp9DqKvyON7YyqhBXEnZ8Vw==",
+  "dgSpecHash": "l7n4SLjZHHb4mtOJJhbZEBh96q68ANtveRxm+9D5Q7v2F0ceMgouV/zowR5AXBoU9gJdwZ3m9KgsfFwYckVtLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\Keltonexe\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Application\\NabucoBank.Accounts.Application.csproj",
+  "projectFilePath": "C:\\Users\\Kelton\\source\\repos\\NabucoBank.Accounts.Api\\src\\NabucoBank.Accounts.Application\\NabucoBank.Accounts.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kelton\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Kelton\\.nuget\\packages\\bogus\\35.0.1\\bogus.35.0.1.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\flurl\\3.0.6\\flurl.3.0.6.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\flurl.http\\3.2.4\\flurl.http.3.2.4.nupkg.sha512",
     "C:\\Users\\Kelton\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

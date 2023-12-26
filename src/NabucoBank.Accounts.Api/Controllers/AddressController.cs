@@ -15,7 +15,7 @@ namespace NabucoBank.Accounts.Api.Controllers
         }
 
         [HttpGet]
-        [Route("cep/{cep}")]
+        [Route("{cep}")]
         public async Task<IActionResult> GetCEP([FromRoute] string cep)
         {
             using HttpClient client = new();
@@ -24,33 +24,18 @@ namespace NabucoBank.Accounts.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync() 
-        {
-            return Ok(await _addressServiceApp.GetAllAddressesAsync());
-        }
+        public async Task<IActionResult> GetAllAsync() => Ok(await _addressServiceApp.GetAllAddressesAsync());
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync([FromRoute] long id)
-        {
-            return Ok(await _addressServiceApp.GetAddressByIdAsync(id));
-        }
+        public async Task<IActionResult> GetByIdAsync([FromRoute] long id) => Ok(await _addressServiceApp.GetAddressByIdAsync(id));
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] AddressPayload payload)
-        {
-            return Ok(await _addressServiceApp.CreateAddressAsync(payload));
-        }
+        public async Task<IActionResult> PostAsync([FromBody] AddressPayload payload) => Ok(await _addressServiceApp.CreateAddressAsync(payload));
 
         [HttpPut]
-        public async Task<IActionResult> PutAsync([FromBody] AddressPayload payload)
-        {
-            return Ok(await _addressServiceApp.UpdateAddressAsync(payload));
-        }
+        public async Task<IActionResult> PutAsync([FromBody] AddressPayload payload) => Ok(await _addressServiceApp.UpdateAddressAsync(payload));
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(long id)
-        {
-            return Ok(await _addressServiceApp.DeleteAddressAsync(id));
-        }
+        public async Task<IActionResult> DeleteAsync(long id) => Ok(await _addressServiceApp.DeleteAddressAsync(id));
     }
 }

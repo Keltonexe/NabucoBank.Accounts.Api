@@ -2,8 +2,7 @@
 {
     public class AccountPayload
     {
-        public long UserId { get; set; }
-        public string Number { get; set; }
-        public decimal Balance { get; set; }
+        public AddressPayload Address { get; set; }
+        public CustomerPayload Customer { get; set; }
     }
 }

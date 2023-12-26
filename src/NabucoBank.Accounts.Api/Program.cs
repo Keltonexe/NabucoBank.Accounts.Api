@@ -24,20 +24,23 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 DbMapping.InitializeMapping();
 
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IAddressRepository, AddressRepository>();
+builder.Services.AddTransient<IBankRepository, BankRepository>();
 
 builder.Services.AddTransient<IDbConnection>((sql) => new MySqlConnection(builder.Configuration.GetConnectionString("NabucoBank")));
 
 // Add services app
 builder.Services.AddScoped<IAccountServiceApp, AccountServiceApp>();
-builder.Services.AddScoped<IUserServiceApp, UserServiceApp>();
+builder.Services.AddScoped<ICustomerServiceApp, CustomerServiceApp>();
 builder.Services.AddScoped<IAddressServiceApp, AddressServiceApp>();
+builder.Services.AddScoped<IBankServiceApp, BankServiceApp>();
 
 // Add services domain
 builder.Services.AddScoped<IAccountService, AccountService>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IBankService, BankService>();
 
 builder.Services.AddSwaggerGen(c =>
 {

@@ -11,29 +11,31 @@ namespace NabucoBank.Accounts.Domain.Services
         {
             _addressRepository = addressRepository;
         }
+
         public async Task<AddressModel> CreateAddressAsync(AddressModel address)
         {
             return await _addressRepository.CreateAddressAsync(address);
         }
 
-        public async Task<bool> DeleteAddressAsync(long id)
+        public async Task<AddressModel> CreateAddressWithCustomerAsync(AddressModel address, long customerId)
         {
-            return await _addressRepository.DeleteAddressAsync(id);
+            var createdAddress = await CreateAddressAsync(address);
+            await AssociateAddressWithCustomerAsync(customerId, createdAddress.Id);
+            return createdAddress;
         }
 
-        public async Task<AddressModel> GetAddressByIdAsync(long id)
+        private async Task AssociateAddressWithCustomerAsync(long customerId, long addressId)
         {
-            return await _addressRepository.GetAddressByIdAsync(id);
+            var customerAddress = new CustomerAddressModel(customerId, addressId);
+            await _addressRepository.InsertCustomerAddressAsync(customerAddress);
         }
 
-        public async Task<IEnumerable<AddressModel>> GetAllAddressAsync()
-        {
-            return await _addressRepository.GetAllAddressAsync();
-        }
+        public async Task<bool> DeleteAddressAsync(long id) => await _addressRepository.DeleteAddressAsync(id);
 
-        public async Task<bool> UpdateAddressAsync(AddressModel address)
-        {
-            return await _addressRepository.UpdateAddressAsync(address);
-        }
+        public async Task<AddressModel> GetAddressByIdAsync(long id) => await _addressRepository.GetAddressByIdAsync(id);
+
+        public async Task<IEnumerable<AddressModel>> GetAllAddressAsync() => await _addressRepository.GetAllAddressAsync();
+
+        public async Task<bool> UpdateAddressAsync(AddressModel address) => await _addressRepository.UpdateAddressAsync(address);
     }
 }

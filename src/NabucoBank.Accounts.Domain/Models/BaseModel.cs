@@ -10,7 +10,6 @@
             set { _createdAt = value; }
         }
         public DateTime? UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
         public string HashCode { get; set; }
     }
 }
