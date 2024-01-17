@@ -10,6 +10,8 @@ namespace NabucoBank.Accounts.CrossCutting.AutoMapper
         public AutoMapperProfile() 
         {
             CreateMap<AccountViewModel, AccountModel>().ReverseMap();
+            CreateMap<AccountViewModel, CustomerModel>().ReverseMap();
+            CreateMap<AccountViewModel, AddressModel>().ReverseMap();
             CreateMap<CustomerModel, CustomerViewModel>().ForMember(dest => dest.CreatedAt, map => map.MapFrom(src => src.CreatedAt.ToString("dd/MM/yyyy"))).ReverseMap();
             CreateMap<AddressViewModel, AddressModel>().ReverseMap();
             CreateMap<BankViewModel, BankModel>().ReverseMap();

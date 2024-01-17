@@ -20,10 +20,10 @@ namespace NabucoBank.Accounts.Application.Services
         {
             var customer = await GetCustomerByDocumentAsync(payload.Document);
 
-            if (customer == null)
-                return _mapper.Map<CustomerViewModel>(await _customerService.CreateCustomerAsync(_mapper.Map<CustomerModel>(payload)));
+            if (customer is not null)
+                return _mapper.Map<CustomerViewModel>(customer);
 
-            return null;
+            return _mapper.Map<CustomerViewModel>(await _customerService.CreateCustomerAsync(_mapper.Map<CustomerModel>(payload)));
         }
 
         public async Task<bool> DeleteCustomerAsync(long id) => await _customerService.DeleteCustomerAsync(id);
@@ -37,3 +37,4 @@ namespace NabucoBank.Accounts.Application.Services
         public async Task<bool> UpdateCustomerAsync(CustomerPayload payload) => await _customerService.UpdateCustomerAsync(_mapper.Map<CustomerModel>(payload));
     }
 }
+

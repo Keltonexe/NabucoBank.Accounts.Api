@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NabucoBank.Accounts.Api.Validators;
 using NabucoBank.Accounts.Application.Interfaces;
 using NabucoBank.Accounts.Application.Payloads;
 
@@ -9,9 +10,11 @@ namespace NabucoBank.Accounts.Api.Controllers
     public class AccountController : ControllerBase
     {
         readonly IAccountServiceApp _accountServiceApp;
-        public AccountController(IAccountServiceApp accountServiceApp)
+        readonly AccountValidator _validator;
+        public AccountController(IAccountServiceApp accountServiceApp, AccountValidator validator)
         {
             _accountServiceApp = accountServiceApp;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -24,7 +27,13 @@ namespace NabucoBank.Accounts.Api.Controllers
         public async Task<IActionResult> GetCustomerAccountByDocumentAsync([FromRoute] string document) => Ok(await _accountServiceApp.GetCustomerAccountByDocumentAsync(document));
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] AccountPayload payload) => Ok(await _accountServiceApp.CreateAccountAsync(payload));
+        public async Task<IActionResult> PostAsync([FromBody] AccountPayload payload)
+        {
+            if (_validator.Validate(payload).IsValid)
+                return Ok(await _accountServiceApp.CreateAccountAsync(payload));
+
+            return BadRequest(_validator.Validate(payload).Errors);
+        }
 
         [HttpPut]
         public async Task<IActionResult> PutAsync([FromBody] AccountPayload payload) => Ok(await _accountServiceApp.UpdateAccountAsync(payload));

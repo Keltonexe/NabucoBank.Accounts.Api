@@ -22,9 +22,36 @@ namespace NabucoBank.Accounts.Application.Services
         }
         public async Task<AccountViewModel> CreateAccountAsync(AccountPayload payload)
         {
-            var customer = await _customerService.CreateCustomerAsync(_mapper.Map<CustomerModel>(payload.Customer));
-            var address = await _addressService.CreateAddressWithCustomerAsync(_mapper.Map<AddressModel>(payload.Address), customer.Id);
-            return _mapper.Map<AccountViewModel>(await _accountService.CreateAccountAsync(new AccountModel(customer.Id, address.Id)));
+            var customer = await _customerService.GetCustomerByDocumentAsync(payload.Customer.Document);
+
+            if (customer is not null)
+                return _mapper.Map<AccountViewModel>(customer);
+
+            var createCustomer = await _customerService.CreateCustomerAsync(_mapper.Map<CustomerModel>(payload.Customer));
+            var address = await _addressService.CreateAddressWithCustomerAsync(_mapper.Map<AddressModel>(payload.Address), createCustomer.Id);
+            var account = await _accountService.CreateAccountAsync(new AccountModel(createCustomer.Id, address.Id));
+            return new AccountViewModel
+            {
+                Number = account.Number,
+                Balance = account.Balance,
+                Branch = account.Branch,
+                Customer = new CustomerViewModel
+                {
+                    Document = createCustomer.Document,
+                    Name = createCustomer.Name,
+                    Email = createCustomer.Email,
+                    Phone = createCustomer.Phone
+                },
+                Address = new AddressViewModel
+                {
+                    City = address.City,
+                    Number = address.Number,
+                    Complement = address.Complement,
+                    State = address.State,
+                    Street = address.Street
+                }
+            };
+
         }
 
         public async Task<bool> DeleteAccountAsync(long id) => await _accountService.DeleteAccountAsync(id);
@@ -40,16 +67,17 @@ namespace NabucoBank.Accounts.Application.Services
 
             return new CustomerAccountViewModel
             {
-                Number = account.Number,
-                Branch = account.Branch,
-                Balance = account.Balance,
+                AccountNumber = account.Number,
+                AccountBranch = account.Branch,
+                AccountType = "PF",
+                AccountBalance = account.Balance,
+
                 Customer = new CustomerViewModel
                 {
-                    Document = document,
+                    Document = customer.Document,
                     Name = customer.Name,
                     Email = customer.Email,
-                    Phone = customer.Phone,
-                    CreatedAt = customer.CreatedAt.ToString()
+                    Phone = customer.Phone
                 }
             };
         }

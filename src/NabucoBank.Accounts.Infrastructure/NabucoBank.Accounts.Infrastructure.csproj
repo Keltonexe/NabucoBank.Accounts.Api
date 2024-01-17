@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NabucoBank.Accounts.Domain\NabucoBank.Accounts.Domain.csproj" />
+    <ProjectReference Include="..\NabucoBank.Accounts.UnitOfWork\NabucoBank.Accounts.UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>

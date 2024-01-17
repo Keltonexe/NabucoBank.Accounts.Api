@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using MySql.Data.MySqlClient;
+using NabucoBank.Accounts.Api.Validators;
 using NabucoBank.Accounts.Application.Interfaces;
 using NabucoBank.Accounts.Application.Services;
 using NabucoBank.Accounts.CrossCutting.AutoMapper;
@@ -8,7 +9,8 @@ using NabucoBank.Accounts.Domain.Interfaces;
 using NabucoBank.Accounts.Domain.Interfaces.Repositories;
 using NabucoBank.Accounts.Domain.Services;
 using NabucoBank.Accounts.Infrastructure.Repositories;
-using System.Data;
+using NabucoBank.Accounts.UnitOfWork.Interface;
+using NabucoBank.Accounts.UnitOfWork.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +30,7 @@ builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IAddressRepository, AddressRepository>();
 builder.Services.AddTransient<IBankRepository, BankRepository>();
 
-builder.Services.AddTransient<IDbConnection>((sql) => new MySqlConnection(builder.Configuration.GetConnectionString("NabucoBank")));
+builder.Services.AddTransient<IUnitOfWork>((sql) => new UnitOfWork(new MySqlConnection(builder.Configuration.GetConnectionString("NabucoBank"))));
 
 // Add services app
 builder.Services.AddScoped<IAccountServiceApp, AccountServiceApp>();
@@ -41,6 +43,9 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IBankService, BankService>();
+
+//Add fluent validators
+builder.Services.AddScoped<AccountValidator>();
 
 builder.Services.AddSwaggerGen(c =>
 {

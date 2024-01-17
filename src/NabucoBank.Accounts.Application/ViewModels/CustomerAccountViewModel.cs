@@ -2,10 +2,10 @@
 {
     public class CustomerAccountViewModel
     {
-        public string Number { get; set; }
-        public string Branch { get; set; }
+        public string AccountNumber { get; set; }
+        public string AccountBranch { get; set; }
         public string AccountType { get; set; }
-        public decimal Balance { get; set; }
+        public decimal AccountBalance { get; set; }
         public CustomerViewModel Customer {  get; set; }
     }
 }
